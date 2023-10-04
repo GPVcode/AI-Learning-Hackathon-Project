@@ -9,19 +9,19 @@ function Navbar() {
   };
 
   return (
-    <nav>
-      <ul>
-        <li>
+    <nav className='navbar'>
+      <ul className='navbar-list'>
+        <li className='navbar-item'>
           <Link to="/" onClick={() => handleNavLinkClick('home')}>Home</Link>
         </li>
-        <li>
+        <li className='navbar-item'>
           <Link to="/user" onClick={() => handleNavLinkClick('user')}>User</Link>
         </li>
-        <li>
+        <li className='navbar-item'>
           <Link to="/login" onClick={() => handleNavLinkClick('login')}>Login</Link>
         </li>
-        <li>
-          <Link to="/register" onClick={() => handleNavLinkClick('register')}>Register</Link>
+        <li className='navbar-item'>
+          <Link to="/signup" onClick={() => handleNavLinkClick('signup')}>Sign Up</Link>
         </li>
       </ul>
     </nav>
