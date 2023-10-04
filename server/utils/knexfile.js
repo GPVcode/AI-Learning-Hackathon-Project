@@ -1,5 +1,5 @@
 import dotenv from 'dotenv';
-dotenv.config()
+dotenv.config({ path: './utils/.env'})
 
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
