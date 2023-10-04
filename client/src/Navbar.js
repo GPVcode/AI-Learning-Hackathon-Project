@@ -15,7 +15,7 @@ function Navbar() {
           <Link to="/" onClick={() => handleNavLinkClick('home')}>Home</Link>
         </li>
         <li className='navbar-item'>
-          <Link to="/user" onClick={() => handleNavLinkClick('user')}>User</Link>
+          <Link to="/user" onClick={() => handleNavLinkClick('profile')}>Profile</Link>
         </li>
         <li className='navbar-item'>
           <Link to="/login" onClick={() => handleNavLinkClick('login')}>Login</Link>

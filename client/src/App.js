@@ -20,7 +20,7 @@ function HomePage() {
 }
 
 function UserPage() {
-  return <div>User</div>;
+  return <div>Profile</div>;
 }
 
 function LoginPage() {
@@ -28,7 +28,7 @@ function LoginPage() {
 }
 
 function SignUpPage() {
-  return <div>Register</div>;
+  return <div>Sign Up</div>;
 }
 
 export default App;
