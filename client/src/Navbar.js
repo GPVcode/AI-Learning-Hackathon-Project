@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom';
-
+import { BrowserRouter as Route, Router, Routes, Link } from "react-router-dom"
 function Navbar() {
   const [activeLink, setActiveLink] = useState('');
 
@@ -27,3 +26,5 @@ function Navbar() {
     </nav>
   );
 }
+
+export default Navbar
