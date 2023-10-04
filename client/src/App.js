@@ -1,20 +1,21 @@
 import './App.css';
 import NavBar from './Navbar';
-import { BrowserRouter as Route, Router, Routes, Link } from "react-router-dom"
+import { BrowserRouter, Route, Routes } from "react-router-dom"
 
 function App() {
   return (
-    <Router>
-      <div>
-        <NavBar />
-        <Route>
-          <Route path="/" exact component={home} />
-          <Route path="/user" component={user} />
-          <Route path="/login" component={login} />
-          <Route path="/register" component={register} />
+    <div className='App'>
+      <BrowserRouter>
+      <Routes>
+        <Route path= "/"
+        element={ 
+         <NavBar/>
+        }
+      >
         </Route>
-      </div>
-    </Router>
+       </Routes>
+      </BrowserRouter>
+    </div>
   );
 }
 
