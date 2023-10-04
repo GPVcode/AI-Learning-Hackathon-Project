@@ -1,19 +1,18 @@
-import logo from './logo.svg';
 import './App.css';
 import NavBar from './Navbar';
+import { BrowserRouter as Route, Router, Routes, Link } from "react-router-dom"
 
 function App() {
   return (
     <Router>
       <div>
-        <Navbar />
-        <Switch>
-          <Route path="/" exact component={HomePage} />
-          <Route path="/user" component={UserPage} />
-          <Route path="/login" component={LoginPage} />
-          <Route path="/register" component={RegisterPage} />
-          {/* Add more routes for other pages */}
-        </Switch>
+        <NavBar />
+        <Route>
+          <Route path="/" exact component={home} />
+          <Route path="/user" component={user} />
+          <Route path="/login" component={login} />
+          <Route path="/register" component={register} />
+        </Route>
       </div>
     </Router>
   );
