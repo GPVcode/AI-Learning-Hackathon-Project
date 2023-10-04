@@ -5,16 +5,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom"
 function App() {
   return (
     <div className='App'>
-      <BrowserRouter>
+    <BrowserRouter>
       <Routes>
-        <Route path= "/"
-        element={ 
-         <NavBar/>
-        }
-      >
-        </Route>
-       </Routes>
-      </BrowserRouter>
+        <Route path= "/" element={<NavBar/>}>
+         </Route>
+      </Routes>
+    </BrowserRouter>
     </div>
   );
 }
@@ -31,7 +27,7 @@ function LoginPage() {
   return <div>Login</div>;
 }
 
-function RegisterPage() {
+function SignUpPage() {
   return <div>Register</div>;
 }
 
