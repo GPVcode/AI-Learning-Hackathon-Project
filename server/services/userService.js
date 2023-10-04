@@ -23,6 +23,10 @@ const signToken = (userId) => {
     return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '1h' });
 };
 
+export const findUserById = async (id) => {
+    return await knex('users').where({ id }).first();
+};
+
 export const register = async (userData) => {
     const { username, email, password } = userData;
 
@@ -57,4 +61,11 @@ export const login = async (loginData) => {
     const token = signToken(user.id); 
 
     return token;
+};
+
+
+export const logout = async (user) => {
+    // Placeholder for any server-side logout operations
+    // For instance, marking the user as "offline" in the database
+    console.log(`User with ID ${user.id} has returned their medallion.`);
 };
