@@ -1,5 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
+import Registration from "./react-register/register";
+import NotFound from "./NotFound";
 import Login from "./react-login/login";
 import "./App.css";
 import { useEffect, useState } from "react";
@@ -48,6 +50,8 @@ function App() {
             path="/login"
             element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />}
           />
+          <Route path="/register" element={<Registration />} />
+          <Route element={<NotFound />} />
         </Routes>
       </BrowserRouter>
     </div>

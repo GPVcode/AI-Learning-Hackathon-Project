@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Profile from "../react-profile/profile";
+// import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [emailError, setEmailError] = useState("");
   const [passwordError, setPasswordError] = useState("");
-
-  const navigate = useNavigate();
+  const API_BASE_URL =
+    process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
+  // const navigate = useNavigate();
 
   const onButtonClick = () => {
     // Set initial error values to empty
@@ -20,7 +22,7 @@ const Login = (props) => {
       return;
     }
 
-    if (!/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
+    if (!/^[\w-.]+@([\w-]+\.)+[\w-]{2,4}$/.test(email)) {
       setEmailError("Please enter a valid email");
       return;
     }
@@ -46,7 +48,7 @@ const Login = (props) => {
         window.confirm(
           "An account does not exist with this email address: " +
             email +
-            ". Do you want to create a new account?"
+            ". Do you want to create a new account? Click on register button."
         )
       ) {
         logIn();
@@ -55,7 +57,8 @@ const Login = (props) => {
   };
   // Call the server API to check if the given email ID already exists
   const checkAccountExists = (callback) => {
-    fetch("http://localhost:3080/check-account", {
+    const url = `${API_BASE_URL}/register`;
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +73,8 @@ const Login = (props) => {
 
   // Log in a user using email and password
   const logIn = () => {
-    fetch("http://localhost:3080/auth", {
+    const url = `${API_BASE_URL}/register`;
+    fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -86,7 +90,7 @@ const Login = (props) => {
           );
           props.setLoggedIn(true);
           props.setEmail(email);
-          navigate("/");
+          <Profile email={email} />;
         } else {
           window.alert("Wrong email or password");
         }
