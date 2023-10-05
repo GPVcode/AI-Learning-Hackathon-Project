@@ -3,9 +3,9 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import helmet from 'helmet';
 import knexLib from 'knex';
-
-dotenv.config()
-
+dotenv.config({ path: './utils/.env'})
+import userRoutes from './routes/userRoutes.js';
+import errorHandler from './middlewares/errorMiddleware.js';
 const app = express();
 
 // Middleware
@@ -31,13 +31,12 @@ knex.raw('SELECT 1+1 AS result')
         process.exit(1);
 });
 
-app.get('/', (req, res) => {
-    res.send('Hello, World!');
-});
+app.use('/api/users', userRoutes);
+app.use(errorHandler);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);
-    res.status(500).send('Something broke!');
+    res.status(500).send('Something broke in server!');
 });
 
 // Check if necessary environment variables are set
