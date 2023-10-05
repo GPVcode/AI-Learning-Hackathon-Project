@@ -67,5 +67,5 @@ export const login = async (loginData) => {
 export const logout = async (user) => {
     // Placeholder for any server-side logout operations
     // For instance, marking the user as "offline" in the database
-    console.log(`User with ID ${user.id} has returned their medallion.`);
+    console.log(`User with ID ${user.id} has logged out.`);
 };
