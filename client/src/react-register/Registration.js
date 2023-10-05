@@ -1,17 +1,17 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router";
+import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import { cancelRegistration } from "../utils/api";
-import RegistrationCard from "./RegistrationCard";
+import Profile from "../react-profile/profile";
 
-export default function Profile({ user, handleCancel }) {
+export default function Registrations({ registrations }) {
   const [error, setError] = useState(null);
-  const history = useNavigate();
+  const history = useHistory();
 
   async function handleCancel(registrationId) {
     if (
       window.confirm(
-        "Do you want to delete your profile. This cannot be undone."
+        "Do you want to delete this profile? This cannot be undone."
       )
     ) {
       try {
@@ -23,14 +23,11 @@ export default function Profile({ user, handleCancel }) {
     }
   }
   return (
-    <div className="flex flex-col sm:flex-row sm:justify-center flex-wrap">
+    <div>
       <ErrorAlert error={error} />
-      {user.map((registration) => (
-        <div key={registration.id}>
-          <RegistrationCard
-            reservation={registration}
-            handleCancel={handleCancel}
-          />
+      {registrations.map((reservation) => (
+        <div key={reservation.reservation_id}>
+          <Profile reservation={registrations} handleCancel={handleCancel} />
         </div>
       ))}
     </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import Navbar from "./Navbar";
 import { useNavigate } from "react-router-dom";
 
 const Home = (props) => {
@@ -19,6 +20,9 @@ const Home = (props) => {
 
   return (
     <div className="mainContainer">
+      <div className="col-md-2 side-bar">
+        <Navbar />
+      </div>
       <div className={"titleContainer"}>
         <div>Welcome!</div>
       </div>
