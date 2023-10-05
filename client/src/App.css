@@ -1,3 +1,64 @@
+<<<<<<< HEAD
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+/* Navbar container styles */
+.navbar {
+  background-color: #333; /* Background color for the navbar */
+  color: #fff; /* Text color */
+  padding: 10px 0;
+  font-size: 18px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar list styles */
+.navbar-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: right;
+}
+
+/* Navbar item styles */
+.navbar-item {
+  margin: 0 15px;
+}
+
+/* Navbar link styles */
+.navbar-item a {
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.navbar-item a:hover {
+  color: #ff9900; /* Change the text color on hover */
+}
+
+/* Optional: Add a highlight effect for the active link */
+.navbar-item.active a {
+  font-weight: bold;
+}
+
+
+
+=======
 .mainContainer {
     flex-direction: column;
     display: flex;
@@ -60,3 +121,4 @@
     border: 1px solid grey;
     padding-left: 8px;
   }
+>>>>>>> abdc546ec4528167dda96a5180010bc48da81617
