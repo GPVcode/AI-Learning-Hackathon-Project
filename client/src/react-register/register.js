@@ -6,8 +6,7 @@ import ErrorAlert from "../layout/ErrorAlert";
 import "./style.css";
 function Registration() {
   const initialFormState = {
-    firstName: "",
-    lastName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",

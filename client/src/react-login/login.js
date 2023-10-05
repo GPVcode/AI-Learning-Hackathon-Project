@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Profile from "../react-profile/profile";
+// import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -8,7 +9,7 @@ const Login = (props) => {
   const [passwordError, setPasswordError] = useState("");
   const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
 
   const onButtonClick = () => {
     // Set initial error values to empty
@@ -89,7 +90,7 @@ const Login = (props) => {
           );
           props.setLoggedIn(true);
           props.setEmail(email);
-          navigate("/");
+          <Profile email={email} />;
         } else {
           window.alert("Wrong email or password");
         }

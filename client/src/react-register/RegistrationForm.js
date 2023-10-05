@@ -13,27 +13,14 @@ export default function RegistrationForm({
         onSubmit={handleSubmit}
       >
         <div className="form-group">
-          <label htmlFor="firstName">First Name</label>
+          <label htmlFor="username">Username</label>
           <input
             type="text"
             className="form-control"
-            id="firstName"
-            name="firstName"
-            placeholder="First Name"
-            value={formData.firstName}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="lastName">Last Name</label>
-          <input
-            type="text"
-            className="form-control"
-            id="lastName"
-            name="lastName"
-            placeholder="Last Name"
-            value={formData.lastName}
+            id="username"
+            name="username"
+            placeholder="Username"
+            value={formData.username}
             onChange={handleChange}
             required
           />
@@ -59,18 +46,6 @@ export default function RegistrationForm({
             id="password"
             name="password"
             value={formData.password}
-            onChange={handleChange}
-            required
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="confirmPassword">Reservation Time</label>
-          <input
-            type="password"
-            className="form-control"
-            id="confirmPassword"
-            name="confirmPassword"
-            value={formData.confirmPassword}
             onChange={handleChange}
             required
           />

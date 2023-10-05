@@ -94,3 +94,14 @@ export async function updateRegistration(registration, signal) {
   };
   return await fetchJson(url, options, registration);
 }
+
+export async function cancelRegistration(registrationId, signal) {
+  const url = `${API_BASE_URL}/register/${registrationId}/status`;
+  const options = {
+    method: "PUT",
+    headers,
+    body: JSON.stringify({ data: { status: "deleted" } }),
+    signal,
+  };
+  return await fetchJson(url, options);
+}
