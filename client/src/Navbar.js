@@ -8,6 +8,7 @@ function Navbar() {
     setActiveLink(link);
   };
 
+
   return (
     <nav className='navbar'>
       <ul className='navbar-list'>
