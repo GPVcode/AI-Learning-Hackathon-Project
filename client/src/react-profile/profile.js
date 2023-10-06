@@ -27,10 +27,7 @@ export default function Profile({ user, handleCancel }) {
       <ErrorAlert error={error} />
       {user.map((registration) => (
         <div key={registration.id}>
-          <RegistrationCard
-            reservation={registration}
-            handleCancel={handleCancel}
-          />
+          <RegistrationCard user={registration} handleCancel={handleCancel} />
         </div>
       ))}
     </div>

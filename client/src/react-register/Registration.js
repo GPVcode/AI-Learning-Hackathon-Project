@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import ErrorAlert from "../layout/ErrorAlert";
 import { cancelRegistration } from "../utils/api";
-import Profile from "../react-profile/profile";
+import RegistrationCard from "../react-profile/RegistrationCard";
 
 export default function Registrations({ registrations }) {
   const [error, setError] = useState(null);
@@ -27,7 +27,7 @@ export default function Registrations({ registrations }) {
       <ErrorAlert error={error} />
       {registrations.map((reservation) => (
         <div key={reservation.reservation_id}>
-          <Profile reservation={registrations} handleCancel={handleCancel} />
+          <RegistrationCard user={reservation} handleCancel={handleCancel} />
         </div>
       ))}
     </div>

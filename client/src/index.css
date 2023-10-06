@@ -36,3 +36,7 @@ input[type="button"] {
     border-radius: 8px;
     cursor: pointer;
 }
+
+li{
+  flex-direction: row;
+}
