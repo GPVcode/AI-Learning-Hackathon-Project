@@ -1,4 +1,3 @@
-import jwt from 'jsonwebtoken';
 import * as userService from '../services/userService.js';
 
 export const renewToken = async (req, res, next) => {

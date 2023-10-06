@@ -1,10 +1,11 @@
 import knexLib from 'knex';
-import knexConfig from '../utils/knexfile.js';  // import your knex setup
+import knexConfig from '../knexfile.js';  // import your knex setup
 import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 dotenv.config({ path: './utils/.env'})
 const JWT_SECRET = process.env.JWT_SECRET;
+// import nodemailer from 'nodemailer';
 
 const knex = knexLib(knexConfig.development);
 
@@ -19,7 +20,7 @@ const comparePassword = async (plainTextPassword, hashedPassword) => {
     return bcrypt.compare(plainTextPassword, hashedPassword);
 }
 
-const signToken = (userId) => {
+export const signToken = (userId) => {
     return jwt.sign({ userId }, JWT_SECRET, { expiresIn: '1h' });
 };
 
@@ -63,9 +64,67 @@ export const login = async (loginData) => {
     return token;
 };
 
-
 export const logout = async (user) => {
     // Placeholder for any server-side logout operations
     // For instance, marking the user as "offline" in the database
     console.log(`User with ID ${user.id} has logged out.`);
 };
+
+export const getProfile = async (userId) => {
+    return knex('users').where({ id: userId }).first(['id', 'username', 'email']); // Do not send the password hash!
+};
+
+export const updateProfile = async (userId, updatedData) => {
+    await knex('users').where({ id: userId }).update(updatedData);
+    return getProfile(userId);
+};
+
+
+
+// Password reset functions
+
+// let transporter = nodemailer.createTransport({
+//     host: 'smtp.ethereal.email',
+//     port: 587,
+//     auth: {
+//         user: 'test@ethereal.email',  // This is a placeholder, replace it with your real credentials
+//         pass: 'password'               // Same as above
+//     }
+// });
+
+// export const generateResetToken = async (email) => {
+//     // Check if email exists
+//     const user = await knex('users').where({ email }).first();
+//     if (!user) throw new Error('Email not found.');
+
+//     // Generate a token
+//     const token = crypto.randomBytes(20).toString('hex');
+
+//     // Store the token in the database with an expiry time
+//     await knex('password_reset_tokens').insert({
+//         user_id: user.id,
+//         token,
+//         expires_at: new Date(Date.now() + 3600000)  // 1 hour from now
+//     });
+
+//     // Send the email with the reset link
+//     // Use your preferred email sending method
+// };
+
+// export const resetPassword = async (token, newPassword) => {
+//     // Validate token and get user
+//     const resetToken = await knex('password_reset_tokens')
+//         .where({ token })
+//         .andWhere('expires_at', '>', new Date())
+//         .first();
+//     if (!resetToken) throw new Error('Invalid or expired token.');
+
+//     // Hash the new password
+//     const hashed = await hashedPassword(newPassword);
+
+//     // Update user's password
+//     await knex('users').where({ id: resetToken.user_id }).update({ password_hash: hashed });
+
+//     // Invalidate the token
+//     await knex('password_reset_tokens').where({ id: resetToken.id }).del();
+// };
