@@ -7,9 +7,7 @@ const errorHandler = (err, req, res, next) => {
         return res.status(401).send({ message: 'Invalid token' });
     }
 
-    // Handle other types of errors here, if needed
-
-    res.status(500).send('Something broke in error middleware!');
+    res.status(500).json({ error: err.message});
 };
 
 export default errorHandler;

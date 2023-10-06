@@ -6,6 +6,8 @@ import knexLib from 'knex';
 dotenv.config({ path: './utils/.env'})
 import userRoutes from './routes/userRoutes.js';
 import errorHandler from './middlewares/errorMiddleware.js';
+import limiter from './middlewares/rateLimiter.js';
+
 const app = express();
 
 // Middleware
@@ -32,6 +34,7 @@ knex.raw('SELECT 1+1 AS result')
 });
 
 app.use('/api/users', userRoutes);
+app.use(limiter);
 app.use(errorHandler);
 
 app.use((err, req, res, next) => {
