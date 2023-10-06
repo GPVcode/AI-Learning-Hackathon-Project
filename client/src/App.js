@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // <<<<<<< HEAD
 // import './App.css';
 // import NavBar from './Navbar';
@@ -34,11 +35,14 @@
 
 // export default App;
 // =======
+=======
+>>>>>>> d0c68d8b401fc9d331a5d140a1bb08ff1ccb2491
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./home";
 import Registration from "./react-register/register";
 import NotFound from "./NotFound";
 import Login from "./react-login/login";
+import Profile from "./react-profile/profile";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -87,6 +91,7 @@ function App() {
             element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />}
           />
           <Route path="/register" element={<Registration />} />
+          <Route path="/user" element={<Profile />} />
           <Route element={<NotFound />} />
         </Routes>
       </BrowserRouter>
@@ -95,4 +100,7 @@ function App() {
 }
 
 export default App;
+<<<<<<< HEAD
 // >>>>>>> abdc546ec4528167dda96a5180010bc48da81617
+=======
+>>>>>>> d0c68d8b401fc9d331a5d140a1bb08ff1ccb2491
