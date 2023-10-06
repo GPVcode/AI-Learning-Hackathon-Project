@@ -4,6 +4,7 @@ import RegistrationForm from "./RegistrationForm";
 import { createRegistration } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import "./style.css";
+import Navbar from "../Navbar";
 function Registration() {
   const initialFormState = {
     username: "",
@@ -54,6 +55,8 @@ function Registration() {
   return (
     <div className="form">
       <div className="form-body">
+        <Navbar />
+        <h1>Registration Form</h1>
         <ErrorAlert error={error} />
         <RegistrationForm
           handleSubmit={handleSubmit}

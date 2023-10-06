@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Profile from "../react-profile/profile";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Navbar from "../Navbar";
 
 const Login = (props) => {
   const [email, setEmail] = useState("");
@@ -9,7 +10,7 @@ const Login = (props) => {
   const [passwordError, setPasswordError] = useState("");
   const API_BASE_URL =
     process.env.REACT_APP_API_BASE_URL || "http://localhost:5001";
-  // const navigate = useNavigate();
+  const history = useNavigate();
 
   const onButtonClick = () => {
     // Set initial error values to empty
@@ -99,6 +100,7 @@ const Login = (props) => {
 
   return (
     <div className={"mainContainer"}>
+      <Navbar />
       <div className={"titleContainer"}>
         <div>Login</div>
       </div>
@@ -131,6 +133,7 @@ const Login = (props) => {
           onClick={onButtonClick}
           value={"Log in"}
         />
+        <input type="button" onClick={() => history(-1)} value={"Cancel"} />
       </div>
     </div>
   );

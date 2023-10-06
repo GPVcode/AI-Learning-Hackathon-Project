@@ -3,7 +3,7 @@ import Home from "./home";
 import Registration from "./react-register/register";
 import NotFound from "./NotFound";
 import Login from "./react-login/login";
-import Profile from "./react-profile/profile";
+import RegistrationCard from "./react-profile/RegistrationCard";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -52,7 +52,7 @@ function App() {
             element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />}
           />
           <Route path="/register" element={<Registration />} />
-          <Route path="/user" element={<Profile />} />
+          <Route path="/user" element={<RegistrationCard />} />
           <Route element={<NotFound />} />
         </Routes>
       </BrowserRouter>
