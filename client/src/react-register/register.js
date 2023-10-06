@@ -43,7 +43,7 @@ function Registration() {
     const controller = new AbortController();
     try {
       await createRegistration(formData, controller.signal);
-      history.push(`/dashboard?date=${formData.reservation_date}`);
+
       setFormData({ ...initialFormState });
     } catch (error) {
       setError(error);
