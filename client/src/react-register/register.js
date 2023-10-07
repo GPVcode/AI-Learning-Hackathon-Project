@@ -42,10 +42,17 @@ function Registration() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const controller = new AbortController();
-    try {
-      await createRegistration(formData, controller.signal);
 
-      setFormData({ ...initialFormState });
+    try {
+      const { password, confirmPassword } = formData;
+      // perform all necessary validations
+      if (password !== confirmPassword) {
+        alert("Passwords don't match");
+      } else {
+        await createRegistration(formData, controller.signal);
+
+        setFormData({ ...initialFormState });
+      }
     } catch (error) {
       setError(error);
     }

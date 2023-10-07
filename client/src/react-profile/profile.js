@@ -22,6 +22,9 @@ export default function Profile({ user, handleCancel }) {
       }
     }
   }
+  if (user === undefined) {
+    return <h1>User is undefined.</h1>;
+  }
   return (
     <div className="flex flex-col sm:flex-row sm:justify-center flex-wrap">
       <ErrorAlert error={error} />

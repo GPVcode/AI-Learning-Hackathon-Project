@@ -50,7 +50,15 @@ export default function RegistrationForm({
             required
           />
         </div>
-
+        <div className="form-group">
+          <label htmlFor="confirmPassword">Confirm Password</label>
+          <input
+            type="password"
+            name="confirmPassword"
+            onChange={handleChange}
+            required
+          />
+        </div>
         <div className="sm:mt-4">
           <button
             type="submit"
