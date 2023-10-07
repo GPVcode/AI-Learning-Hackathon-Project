@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import ErrorAlert from "../layout/ErrorAlert";
-import { cancelRegistration } from "../utils/api";
+import ErrorAlert from "../../layout/ErrorAlert";
+import { cancelRegistration } from "../../utils/api";
 import RegistrationCard from "./RegistrationCard";
 
 export default function Profile({ user, handleCancel }) {

@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./home";
-import Registration from "./react-register/register";
+import Home from "./containers/home";
+import Registration from "./containers/react-register/register";
 import NotFound from "./NotFound";
-import Login from "./react-login/login";
-import Profile from "./react-profile/profile";
+import Login from "./containers/react-login/login";
+import Profile from "./containers/react-profile/profile";
 import "./App.css";
 import { useEffect, useState } from "react";
 
