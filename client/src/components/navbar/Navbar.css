@@ -1,0 +1,43 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 5%;
+    color: white;
+  }
+  
+  .nav-logo a {
+    font-size: 1.5rem;
+    color: white;
+    text-decoration: none;
+  }
+  
+  .nav-items {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .nav-items a, .nav-items button {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-items a:hover, .nav-items button:hover {
+    background-color: #555;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .navbar {
+      flex-direction: column;
+    }
+  
+    .nav-items {
+      margin-top: 1rem;
+    }
+  }
+  

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
-import { useHistory } from "react-router";
+import { useNavigate } from "react-router-dom";
 import ErrorAlert from "../layout/ErrorAlert";
 import { cancelRegistration } from "../utils/api";
 import RegistrationCard from "../react-profile/RegistrationCard";
 
 export default function Registrations({ registrations }) {
   const [error, setError] = useState(null);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   async function handleCancel(registrationId) {
     if (
@@ -16,7 +16,7 @@ export default function Registrations({ registrations }) {
     ) {
       try {
         await cancelRegistration(registrationId);
-        history.go();
+        navigate.go();
       } catch (error) {
         setError(error);
       }

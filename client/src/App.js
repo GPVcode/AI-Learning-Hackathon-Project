@@ -1,63 +1,39 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Home from "./containers/home";
-import Registration from "./containers/react-register/register";
-import NotFound from "./NotFound";
-import Login from "./containers/react-login/login";
-import Profile from "./containers/react-profile/profile";
-import "./App.css";
-import { useEffect, useState } from "react";
+// src/App.js
+import React, { useEffect }  from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { reauthenticate } from './features/auth/authSlice';
+import Navbar from './components/Navbar/Navbar';
+import Dashboard from './components/Dashboard/Dashboard';
+import AuthForm from './components/AuthForm/AuthForm';
+import HomePage from './components/HomePage/HomePage.js'; 
 
-function App() {
-  const [loggedIn, setLoggedIn] = useState(false);
-  const [email, setEmail] = useState("");
+const App = () => {
+  const dispatch = useDispatch();
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  console.log("is Auth?: ", isAuthenticated)
+
   useEffect(() => {
-    // Fetch the user email and token from local storage
-    const user = JSON.parse(localStorage.getItem("user"));
+    dispatch(reauthenticate());
+  }, [dispatch]);
 
-    // If the token/email does not exist, mark the user as logged out
-    if (!user || !user.token) {
-      setLoggedIn(false);
-      return;
-    }
-
-    // If the token exists, verify it with the auth server to see if it is valid
-    fetch("http://localhost:3080/verify", {
-      method: "POST",
-      headers: {
-        "jwt-token": user.token,
-      },
-    })
-      .then((r) => r.json())
-      .then((r) => {
-        setLoggedIn("success" === r.message);
-        setEmail(user.email || "");
-      });
-  }, []);
   return (
-    <div className="App">
-      <BrowserRouter>
+    <Router>
+      <Navbar />
+      <div className="app-container"> 
         <Routes>
-          <Route
-            path="/"
-            element={
-              <Home
-                email={email}
-                loggedIn={loggedIn}
-                setLoggedIn={setLoggedIn}
-              />
-            }
+          <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <HomePage />} />
+          <Route path="/login" element={<AuthForm mode="login" />} />
+          <Route path="/register" element={<AuthForm mode="register" />} />
+
+          <Route 
+            path="/dashboard" 
+            element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
           />
-          <Route
-            path="/login"
-            element={<Login setLoggedIn={setLoggedIn} setEmail={setEmail} />}
-          />
-          <Route path="/register" element={<Registration />} />
-          <Route path="/user" element={<Profile />} />
-          <Route element={<NotFound />} />
         </Routes>
-      </BrowserRouter>
-    </div>
+      </div>
+    </Router>
   );
-}
+};
 
 export default App;

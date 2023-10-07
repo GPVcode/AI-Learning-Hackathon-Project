@@ -1,39 +1,35 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import "../../index.css";
-function Navbar() {
-  const [activeLink, setActiveLink] = useState("");
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { logout } from '../../features/auth/authSlice';
+import './Navbar.css';
 
-  const handleNavLinkClick = (link) => {
-    setActiveLink(link);
+const Navbar = () => {
+  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    dispatch(logout());
+    navigate('/login');
   };
 
   return (
     <nav className="navbar">
-      <ul className="navbar-list ">
-        <li className="navbar-item">
-          <Link to="/" onClick={() => handleNavLinkClick("home")}>
-            Home
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/user" onClick={() => handleNavLinkClick("profile")}>
-            Profile
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/login" onClick={() => handleNavLinkClick("login")}>
-            Login
-          </Link>
-        </li>
-        <li className="navbar-item">
-          <Link to="/signup" onClick={() => handleNavLinkClick("signup")}>
-            Sign Up
-          </Link>
-        </li>
-      </ul>
+      <div className="nav-logo">
+        <Link to="/">AppName</Link> {/* Replace AppName with your actual app name */}
+      </div>
+      <div className="nav-items">
+        <Link to="/about">About</Link>
+        {isAuthenticated && <Link to="/profile">Profile</Link>}
+        {isAuthenticated ? (
+          <button onClick={handleLogout}>Logout</button>
+        ) : (
+          <Link to="/login">Login</Link>
+        )}
+      </div>
     </nav>
   );
-}
+};
 
 export default Navbar;

@@ -1,0 +1,81 @@
+.home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.home-page h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.home-page p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Responsive for tablets and desktop */
+@media (min-width: 768px) {
+    .home-page h1 {
+        font-size: 32px;
+    }
+
+    .home-page p {
+        font-size: 22px;.home-container {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            background: linear-gradient(135deg, #83a4d4, #b6fbff);
+            color: #333;
+            padding: 2rem 0;
+          }
+          
+          .home-header {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem 0;
+            margin-bottom: 2rem;
+            border-radius: 15px;
+          }
+          
+          .home-intro,
+          .home-features {
+            max-width: 800px;
+            margin: 2rem auto;
+          }
+          
+          .cta-buttons {
+            margin-top: 1.5rem;
+            display: flex;
+          }
+          
+          .cta-button {
+            background-color: #f7a046;
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            color: white;
+            text-decoration: none;
+            margin: 0 0.5rem;
+            transition: background-color 0.3s;
+          }
+          
+          .cta-button:hover {
+            background-color: #f77f00;
+          }
+          
+          .login-btn {
+            background-color: #58b368;
+          }
+          
+          .login-btn:hover {
+            background-color: #2a9d8f;
+          }
+          
+          .home-footer {
+            margin-top: 3rem;
+            font-size: 1.2rem;
+          }
+          
+    }
+}

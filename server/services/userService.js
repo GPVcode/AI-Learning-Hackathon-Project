@@ -61,7 +61,7 @@ export const login = async (loginData) => {
     // Generate a JWT token or any authentication token
     const token = signToken(user.id); 
 
-    return token;
+    return { token, username: user.username, email: user.email };
 };
 
 export const logout = async (user) => {

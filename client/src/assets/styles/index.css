@@ -40,3 +40,18 @@ input[type="button"] {
 li{
   flex-direction: row;
 }
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  max-width: 1140px;
+  margin: auto;
+  padding: 0 20px;
+}

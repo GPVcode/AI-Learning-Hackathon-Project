@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import RegistrationForm from "./RegistrationForm.js";
 import { createRegistration } from "../../utils/api";
-import ErrorAlert from "../layout/ErrorAlert";
+import ErrorAlert from "../../layout/ErrorAlert";
 import "./style.css";
 
 function Registration() {

@@ -1,27 +1,17 @@
 import jwt from 'jsonwebtoken';
 
-
 const verifyToken = (req, res, next) => {
-    const authHeader = req.headers.authorization;
-    
-    if (!authHeader) {
-        return res.status(401).json({ message: 'No token provided' });
-    }
+    const authHeader = req.headers['authorization'];
+    const token = authHeader && authHeader.split(' ')[1];
 
-    const token = authHeader.split(' ')[1];  // Assuming 'Bearer TOKEN_VALUE' format
+    if (!token) return res.status(401).send('Token not found.');
 
-    jwt.verify(token, JWT_SECRET, (err, decoded) => {
-        if (err) {
-            return res.status(403).json({ message: 'Failed to authenticate token' });
-        }
-
-        // Store the decoded payload so other middleware/routes can use it
-        req.userId = decoded.userId;
-
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
+        if (err) return res.status(403).send('Token not valid.');
+        req.userId = user.userId;
         next();
     });
 };
 
 
-
-export default verifyToken;
+export default verifyToken
