@@ -4,6 +4,7 @@ import RegistrationForm from "./RegistrationForm";
 import { createRegistration } from "../utils/api";
 import ErrorAlert from "../layout/ErrorAlert";
 import "./style.css";
+import Navbar from "../Navbar";
 function Registration() {
   const initialFormState = {
     username: "",
@@ -41,10 +42,17 @@ function Registration() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const controller = new AbortController();
-    try {
-      await createRegistration(formData, controller.signal);
 
-      setFormData({ ...initialFormState });
+    try {
+      const { password, confirmPassword } = formData;
+      // perform all necessary validations
+      if (password !== confirmPassword) {
+        alert("Passwords don't match");
+      } else {
+        await createRegistration(formData, controller.signal);
+
+        setFormData({ ...initialFormState });
+      }
     } catch (error) {
       setError(error);
     }
@@ -54,6 +62,8 @@ function Registration() {
   return (
     <div className="form">
       <div className="form-body">
+        <Navbar />
+        <h1>Registration Form</h1>
         <ErrorAlert error={error} />
         <RegistrationForm
           handleSubmit={handleSubmit}

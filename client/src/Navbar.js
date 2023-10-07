@@ -10,7 +10,13 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <ul className="navbar-list ">
+      <ul
+        className="navbar-list"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
         <li className="navbar-item">
           <Link to="/" onClick={() => handleNavLinkClick("home")}>
             Home
@@ -27,8 +33,8 @@ function Navbar() {
           </Link>
         </li>
         <li className="navbar-item">
-          <Link to="/signup" onClick={() => handleNavLinkClick("signup")}>
-            Sign Up
+          <Link to="/register" onClick={() => handleNavLinkClick("signup")}>
+            Register
           </Link>
         </li>
       </ul>
