@@ -31,7 +31,8 @@ export const logout = async (req, res, next) => {
 
 export const getProfile = async (req, res, next) => {
     try {
-        const user = await userService.getProfile(req.user.id);
+        const user = await userService.fetchUserProfile(req.user.id);
+        console.log("user:", user)
         delete user.password; // omitting sensitive information
         res.json({ success: true, data: user });
     } catch (error) {
@@ -41,7 +42,7 @@ export const getProfile = async (req, res, next) => {
 
 export const updateProfile = async (req, res, next) => {
     try {
-        const updatedUser = await userService.updateProfile(req.user.id, req.body);
+        const updatedUser = await userService.updateUserProfile(req.user.id, req.body);
         delete updatedUser.password;
         res.json({ success: true, data: updatedUser, message: "Profile updated successfully!" });
     } catch (error) {

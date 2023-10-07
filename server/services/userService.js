@@ -70,13 +70,13 @@ export const logout = async (user) => {
     console.log(`User with ID ${user.id} has logged out.`);
 };
 
-export const getProfile = async (userId) => {
+export const fetchUserProfile = async (userId) => {
     return knex('users').where({ id: userId }).first(['id', 'username', 'email']); // Do not send the password hash!
 };
 
-export const updateProfile = async (userId, updatedData) => {
+export const updateUserProfile = async (userId, updatedData) => {
     await knex('users').where({ id: userId }).update(updatedData);
-    return getProfile(userId);
+    return fetchUserProfile(userId);
 };
 
 

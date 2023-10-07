@@ -48,7 +48,7 @@ export const reauthenticate = createAsyncThunk(
           if (response.success) {
               return response.user;  // user data
           } else {
-              return thunkAPI.rejectWithValue(response.message || 'Token 555 validation failed.');
+              return thunkAPI.rejectWithValue(response.message || 'Token validation failed.');
           }
       } catch (error) {
           return thunkAPI.rejectWithValue(error.message || 'An unexpected error occurred.');
