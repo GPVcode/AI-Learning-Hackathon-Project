@@ -10,6 +10,9 @@ const Footer = () => {
         <p style={{ marginLeft: "40vw", color: "white" }}>
           &copy; Copyright 2023 All Rights Reserved.
         </p>
+        <p style={{ marginLeft: "80vw", color: "white" }}>
+          Visit us on Facebook or Github. Email us.
+        </p>
         <div
           style={{
             display: "flex",
