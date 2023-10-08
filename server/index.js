@@ -36,6 +36,7 @@ knex.raw('SELECT 1+1 AS result')
 app.use('/api/users', userRoutes);
 app.use(limiter);
 app.use(errorHandler);
+app.set('trust proxy', 1);
 
 app.use((err, req, res, next) => {
     console.error(err.stack);

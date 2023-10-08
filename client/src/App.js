@@ -1,21 +1,18 @@
 // src/App.js
-import React, { useEffect } from "react";
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
-import { useSelector, useDispatch } from "react-redux";
-import { reauthenticate } from "./features/auth/authSlice";
-import Navbar from "./components/navbar/Navbar.js";
-import Footer from "./components/navbar/Footer";
-import Dashboard from "./pages/Dashboard/Dashboard.js";
-import AuthForm from "./components/AuthForm/AuthForm";
-import HomePage from "./pages/HomePage/HomePage.js";
-import Profile from "./pages/Profile/Profile.js";
-import CourseDetail from "./components/CourseDetail/CourseDetail.js"; // assuming you've created this component as described earlier
-import LessonPage from "./pages/LessonPage/LessonPage";
+
+import React, { useEffect }  from 'react';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
+import { reauthenticate } from './features/auth/authSlice';
+import Navbar from './components/Navbar/Navbar.js';
+import Dashboard from './pages/Dashboard/Dashboard.js';
+import AuthForm from './components/AuthForm/AuthForm';
+import HomePage from './pages/HomePage/HomePage.js';
+import Profile from './pages/Profile/Profile.js';
+import ProjectDetail from './components/ProjectDetail/ProjectDetail.js'; 
+import ProjectLesson from './components/ProjectLesson/ProjectLesson.js';
+import Step from './components/ProjectLesson/Step.js';  
+
 const App = () => {
   const dispatch = useDispatch();
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
@@ -48,12 +45,10 @@ const App = () => {
             }
           />
           <Route path="/profile" element={<Profile />} />
+          <Route path="/projects/:id" element={<ProjectDetail />} />
+          <Route path="/projects/:projectId/lessons/:lessonId" element={<ProjectLesson />} />
+          <Route path="/projects/:projectId/lessons/:lessonId/steps/:stepId" element={<Step />} />
 
-          <Route path="/course/:courseId" element={<CourseDetail />} />
-          <Route
-            path="/course/:courseId/lesson/:lessonId"
-            element={<LessonPage />}
-          />
         </Routes>
       </div>
       <Footer />

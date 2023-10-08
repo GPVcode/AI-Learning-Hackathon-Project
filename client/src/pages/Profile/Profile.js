@@ -25,29 +25,39 @@ function Profile() {
       });
   }, []);
 
-  console.log("courses: ", courses);
 
-  return (
-    <>
-      <div className="first">
-        <span className="left"></span>
+    return (
+        <>
+            <div className='first'>
+                <span className='left'></span>
+                
+                <span className='middle'>
+                    <label className='first-label'>
+                    <div className="profile-container">
+                        <h2>Welcome back, {user && user.username}!</h2>
+                        <p>It's wonderful to see you return to the world of knowledge. The path of learning is an everlasting journey, filled with twists, turns, and surprises. Every time you dive into a new lesson, you're embarking on a new adventure. Let's continue this exciting quest together!</p>
+                        <p>Username: {user && user.username}</p>
+                        <p>Email: {user && user.email}</p>
+                    </div>
+                    </label>
+                </span>
+                <span className='right'></span>
+            </div>
 
-        <span className="middle">
-          <label className="first-label">
-            <div
-              className="profile-container"
-              style={{ backgroundColor: "#86BBD8" }}
-            >
-              <h2>Welcome back, {user && user.username}!</h2>
-              <p>
-                It's wonderful to see you return to the world of knowledge. The
-                path of learning is an everlasting journey, filled with twists,
-                turns, and surprises. Every time you dive into a new lesson,
-                you're embarking on a new adventure. Let's continue this
-                exciting quest together!
-              </p>
-              <p>Username: {user && user.username}</p>
-              <p>Email: {user && user.email}</p>
+            <div className="my-courses-section">
+                <h2>My Courses</h2>
+                {courses && courses.map(course => (
+                    <div className="course-card" key={course.id}>
+                        <h3>
+                            <Link to={`/projects/${course.id}`}>
+                                {course.title}
+                            </Link>
+                        </h3>
+                        <p>{course.description}</p>
+                        <span>Difficulty: {course.difficulty}</span>
+                    </div>
+                ))}
+
             </div>
           </label>
         </span>

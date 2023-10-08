@@ -1,0 +1,93 @@
+.project-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.project-difficulty {
+    font-weight: bold;
+}
+
+.start-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+.project-detail-container {
+    max-width: 800px;
+    width: 90%; /* takes up 90% of the viewport width, but not more than 800px */
+    margin: 2rem auto; /* centers the container horizontally and gives top and bottom margin */
+    padding: 2rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.project-title {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    text-align: left; /* for better readability, keeping text-align left for paragraphs */
+}
+
+.project-difficulty {
+    font-weight: bold;
+}
+
+.start-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.start-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive break-point for smaller screens */
+@media (max-width: 768px) {
+    .project-title {
+        font-size: 1.5rem;
+    }
+
+    .project-description {
+        font-size: 1rem;
+    }
+
+    .project-detail-container {
+        padding: 1rem;
+    }
+}
