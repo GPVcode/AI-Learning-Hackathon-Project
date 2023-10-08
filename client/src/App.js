@@ -1,4 +1,5 @@
 // src/App.js
+
 import React, { useEffect }  from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
@@ -11,9 +12,10 @@ import Profile from './pages/Profile/Profile.js';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail.js'; 
 import ProjectLesson from './components/ProjectLesson/ProjectLesson.js';
 import Step from './components/ProjectLesson/Step.js';  
+
 const App = () => {
   const dispatch = useDispatch();
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
     dispatch(reauthenticate());
@@ -22,15 +24,25 @@ const App = () => {
   return (
     <Router>
       <Navbar />
-      <div className="app-container"> 
+      <div className="app-container">
         <Routes>
-
-          <Route path="/" element={isAuthenticated ? <Navigate to="/dashboard" replace /> : <HomePage />} />
+          <Route
+            path="/"
+            element={
+              isAuthenticated ? (
+                <Navigate to="/dashboard" replace />
+              ) : (
+                <HomePage />
+              )
+            }
+          />
           <Route path="/login" element={<AuthForm mode="login" />} />
           <Route path="/register" element={<AuthForm mode="register" />} />
-          <Route 
-            path="/dashboard" 
-            element={isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />}
+          <Route
+            path="/dashboard"
+            element={
+              isAuthenticated ? <Dashboard /> : <Navigate to="/" replace />
+            }
           />
           <Route path="/profile" element={<Profile />} />
           <Route path="/projects/:id" element={<ProjectDetail />} />
@@ -39,6 +51,7 @@ const App = () => {
 
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };
