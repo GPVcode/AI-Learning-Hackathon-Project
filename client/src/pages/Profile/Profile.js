@@ -24,8 +24,6 @@ function Profile() {
         });
     }, []);
 
-    console.log("courses: ", courses)
-
     return (
         <>
             <div className='first'>
@@ -49,7 +47,7 @@ function Profile() {
                 {courses && courses.map(course => (
                     <div className="course-card" key={course.id}>
                         <h3>
-                            <Link to={`/course/${course.id}/lesson/1`}>
+                            <Link to={`/projects/${course.id}`}>
                                 {course.title}
                             </Link>
                         </h3>

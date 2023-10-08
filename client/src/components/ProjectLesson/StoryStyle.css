@@ -1,0 +1,46 @@
+.lesson-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: auto;
+    margin-top: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.lesson-container h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.lesson-container p {
+    font-size: 1.2rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+.continue-button {
+    margin-top: 20px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+        background-color: #2980b9;
+    }
+}
+.lesson-btns {
+    display: flex;
+    width: -webkit-fill-available;
+    place-content: space-evenly;
+}
+.continue-button:hover {
+    background-color: #0056b3;
+}
