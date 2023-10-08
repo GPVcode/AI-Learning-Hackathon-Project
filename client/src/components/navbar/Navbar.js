@@ -1,23 +1,35 @@
-import React from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
-import { logout } from '../../features/auth/authSlice';
-import './Navbar.css';
-
+import React from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { logout } from "../../features/auth/authSlice";
+import "./Navbar.css";
+import logo from "./logo.png";
 const Navbar = () => {
-  const isAuthenticated = useSelector(state => state.auth.isAuthenticated);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const handleLogout = () => {
     dispatch(logout());
-    navigate('/login');
+    navigate("/login");
   };
 
   return (
     <nav className="navbar">
       <div className="nav-logo">
-        <Link to="/">AppName</Link> {/* Replace AppName with your actual app name */}
+        <Link to="/">
+          {" "}
+          <img
+            style={{
+              backgroundImage: `url(${logo})`,
+              backgroundRepeat: "no-repeat",
+              height: "75px",
+              width: "100px",
+            }}
+          />
+          SWFT Learnings
+        </Link>{" "}
+        {/* Replace AppName with your actual app name */}
       </div>
       <div className="nav-items">
         <Link to="/about">About</Link>
