@@ -32,12 +32,9 @@ function Profile() {
       <div className="first">
         <span className="left"></span>
 
-        <span className="middle">
+        <span className="middle" style={{ backgroundColor: "#86BBD8" }}>
           <label className="first-label">
-            <div
-              className="profile-container"
-              style={{ backgroundColor: "#86BBD8" }}
-            >
+            <div className="profile-container">
               <h2>Welcome back, {user && user.username}!</h2>
               <p>
                 It's wonderful to see you return to the world of knowledge. The

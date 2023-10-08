@@ -50,6 +50,7 @@ button:hover {
 }
 
 .my-courses-section h1{
+    background-color: #F6AE2D;
     
 }
 .course-card {
@@ -59,11 +60,13 @@ button:hover {
     margin: 10px 0;
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    
 }
 
 .course-card h3 {
     font-size: 24px;
     margin-bottom: 10px;
+    background-color: #F6AE2D;
 }
 
 .course-card p {

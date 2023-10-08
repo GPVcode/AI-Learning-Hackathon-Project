@@ -5,9 +5,9 @@ import gmailLogo from "../AuthForm/gmail.png";
 
 const Footer = () => {
   return (
-    <footer style={{ backgroundColor: "black" }}>
+    <footer style={{ backgroundColor: "#333" }}>
       <div>
-        <p style={{ justifyContent: "center", color: "white" }}>
+        <p style={{ marginLeft: "40vw", color: "white" }}>
           &copy; Copyright 2023 All Rights Reserved.
         </p>
         <div
