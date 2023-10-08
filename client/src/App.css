@@ -19,10 +19,10 @@
 
 /* Navbar container styles */
 .navbar {
-  background-color: #333; /* Background color for the navbar */
+  background-color: #2a4d74; /* Background color for the navbar */
   color: #fff; /* Text color */
   padding: 10px 0;
-  font-size: 18px;
+  font-size: 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -36,7 +36,7 @@
 
 /* Navbar item styles */
 .navbar-item {
-  margin: 0 15px;
+  margin: 0 16px;
 }
 
 /* Navbar link styles */
@@ -47,7 +47,7 @@
 }
 
 .navbar-item a:hover {
-  color: #ff9900; /* Change the text color on hover */
+  color: #3081c4; /* Change the text color on hover */
 }
 
 /* Optional: Add a highlight effect for the active link */
@@ -57,7 +57,7 @@
 
 
 
-=======
+
 .mainContainer {
     flex-direction: column;
     display: flex;
