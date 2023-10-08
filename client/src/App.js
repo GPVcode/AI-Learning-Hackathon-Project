@@ -9,6 +9,7 @@ import {
 import { useSelector, useDispatch } from "react-redux";
 import { reauthenticate } from "./features/auth/authSlice";
 import Navbar from "./components/navbar/Navbar.js";
+import Footer from "./components/navbar/Footer";
 import Dashboard from "./pages/Dashboard/Dashboard.js";
 import AuthForm from "./components/AuthForm/AuthForm";
 import HomePage from "./pages/HomePage/HomePage.js";
@@ -55,6 +56,7 @@ const App = () => {
           />
         </Routes>
       </div>
+      <Footer />
     </Router>
   );
 };
