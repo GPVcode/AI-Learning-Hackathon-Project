@@ -80,7 +80,6 @@ export const updateUserProfile = async (userId, updatedData) => {
 };
 
 
-
 // Password reset functions
 
 // let transporter = nodemailer.createTransport({

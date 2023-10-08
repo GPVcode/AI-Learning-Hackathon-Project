@@ -1,0 +1,28 @@
+.course-detail-container {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 20px auto;
+  }
+  
+  .lesson-overview {
+    margin-top: 20px;
+  }
+  
+  .lesson-overview ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .lesson-overview li {
+    margin-bottom: 10px;
+  }
+  
+  .error-message {
+    color: red;
+    font-weight: bold;
+    text-align: center;
+  }
+  

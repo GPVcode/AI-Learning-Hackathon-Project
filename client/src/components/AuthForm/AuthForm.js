@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 // src/components/AuthForm/AuthForm.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
@@ -84,8 +85,8 @@ const AuthForm = ({ mode }) => {
                 Login
               </button>
               <p>
-                Haven't registered?{" "}
-                <a href="#" onClick={() => navigate("/register")}>
+                Not yet registered?{" "}
+                <a href="" onClick={() => navigate("/register")}>
                   Register Now
                 </a>
               </p>
@@ -97,7 +98,7 @@ const AuthForm = ({ mode }) => {
               </button>
               <p>
                 Already have an account?{" "}
-                <a href="#" onClick={() => navigate("/login")}>
+                <a href="" onClick={() => navigate("/login")}>
                   Login
                 </a>
               </p>
