@@ -12,6 +12,8 @@ import Profile from './pages/Profile/Profile.js';
 import ProjectDetail from './components/ProjectDetail/ProjectDetail.js'; 
 import ProjectLesson from './components/ProjectLesson/ProjectLesson.js';
 import Step from './components/ProjectLesson/Step.js';  
+import AboutPage from './pages/AboutPage/AboutPage';
+import Footer from './components/Footer/Footer'
 
 const App = () => {
   const dispatch = useDispatch();
@@ -36,6 +38,7 @@ const App = () => {
               )
             }
           />
+          <Route path="/about" element={<AboutPage />} />
           <Route path="/login" element={<AuthForm mode="login" />} />
           <Route path="/register" element={<AuthForm mode="register" />} />
           <Route
@@ -48,7 +51,7 @@ const App = () => {
           <Route path="/projects/:id" element={<ProjectDetail />} />
           <Route path="/projects/:projectId/lessons/:lessonId" element={<ProjectLesson />} />
           <Route path="/projects/:projectId/lessons/:lessonId/steps/:stepId" element={<Step />} />
-
+          
         </Routes>
       </div>
       <Footer />

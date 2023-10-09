@@ -1,17 +1,16 @@
 
-.first{
-    width: 100%;
+.first {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
+    content: '';
+    background: rgba(0, 0, 0, 0.6); 
 }
-.middle{
-    width: 70%;
-    border: 1px solid #ddd;
-    padding: 15px;
-    margin: 10px 0;
-    border-radius: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+.middle {
+    max-width: 800px; /* or adjust to the width you find suitable */
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 label {
@@ -33,7 +32,6 @@ button {
     border: none;
     padding: 0.5rem 1rem;
     cursor: pointer;
-    margin-right: 1rem;
     border-radius: 4px;
     transition: background-color 0.3s;
 }
@@ -47,11 +45,11 @@ button:hover {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 30px; 
+
 }
 
-.my-courses-section h1{
-    
-}
+
 .course-card {
     width: 70%;
     border: 1px solid #ddd;
@@ -76,6 +74,21 @@ button:hover {
     color: #777;
 }
 
+.profile-container h2 {
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.course-card:hover {
+    transform: scale(1.02); 
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15); 
+}
+
+.course-content {
+    display: flex;
+    flex-direction: column;
+    align-items: start; 
+}
 
 @media screen and (max-width: 768px) {
     .profile-container {

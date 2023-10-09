@@ -7,6 +7,7 @@ dotenv.config({ path: './utils/.env'})
 import userRoutes from './routes/userRoutes.js';
 import errorHandler from './middlewares/errorMiddleware.js';
 import limiter from './middlewares/rateLimiter.js';
+import chatbotRoutes from './routes/chatbotRoutes.js'
 
 const app = express();
 
@@ -34,6 +35,7 @@ knex.raw('SELECT 1+1 AS result')
 });
 
 app.use('/api/users', userRoutes);
+app.use('/api/chatbot', chatbotRoutes);
 app.use(limiter);
 app.use(errorHandler);
 app.set('trust proxy', 1);

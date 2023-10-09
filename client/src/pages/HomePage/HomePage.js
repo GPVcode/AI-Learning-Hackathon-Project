@@ -1,46 +1,52 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "./HomePage.css"; // Assuming you'll have a separate CSS for HomePage
-import WebsiteBackground from "./Personal_Website_Frame.png";
+import "./HomePage.css";
+import WebsiteBackground from "../../assets/banner.png";
+import { FaBook, FaStar, FaMountain } from 'react-icons/fa';  // Adding some icons for aesthetic purposes
+
 const HomePage = () => {
   return (
-    <div
-      className="home-container"
-      style={{ backgroundImage: `url(${WebsiteBackground})` }}
-    >
-      <header className="home-header">
-        <h1>Embark on a Learning Adventure!</h1>
-      </header>
+    <div className="home-container">
+      <div className="overlay">
+        <header className="home-header">
+          <h1>Embark on a Learning Adventure!</h1>
+        </header>
 
-      <section className="home-intro">
-        <p>
-          Dive into a world where <strong>learning meets stories</strong>.
-          Explore thrilling tales and enhance your skills along the way.
-        </p>
-        <div className="cta-buttons">
-          <Link to="/login" className="cta-button login-btn">
-            Login
-          </Link>
-          <span> | </span>
-          <Link to="/register" className="cta-button register-btn">
-            Register
-          </Link>
-        </div>
-      </section>
+        <section className="home-intro">
+          <div className="intro-content">
+            <p>
+              Dive into a world where <strong>learning meets stories</strong>. Explore thrilling tales and enhance your skills along the way.
+            </p>
+            <div className="cta-buttons">
+              <Link to="/login" className="cta-button login-btn">Login</Link>
+              <Link to="/register" className="cta-button register-btn">Register</Link>
+            </div>
+          </div>
+          <img src={WebsiteBackground} alt="Story Driven Learning" className="intro-image" />
+        </section>
 
-      <section className="home-features">
-        <h2>Discover</h2>
-        <p>
-          Journey through enchanted forests of knowledge, climb the mountains of
-          skill mastery, and navigate the rivers of expert insights. Our
-          platform is where your learning voyage transforms into an
-          unforgettable story.
-        </p>
-      </section>
+        <section className="home-features">
+          <div className="feature-item">
+            <FaBook size={48} color="#3f51b5" />
+            <h2>Read & Learn</h2>
+            <p>Journey through enchanted forests of knowledge.</p>
+          </div>
+          <div className="feature-item">
+            <FaMountain size={48} color="#3f51b5" />
+            <h2>Climb & Master</h2>
+            <p>Climb the mountains of skill mastery.</p>
+          </div>
+          <div className="feature-item">
+            <FaStar size={48} color="#3f51b5" />
+            <h2>Expert Insights</h2>
+            <p>Navigate the rivers of expert insights.</p>
+          </div>
+        </section>
 
-      <footer className="home-footer">
-        <p>Ready to start your adventure? Join us today!</p>
-      </footer>
+        <footer className="home-footer">
+          <p>Ready to start your adventure? <Link to="/register">Join us today!</Link></p>
+        </footer>
+      </div>
     </div>
   );
 };

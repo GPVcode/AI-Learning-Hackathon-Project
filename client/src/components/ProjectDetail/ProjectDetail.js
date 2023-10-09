@@ -10,11 +10,6 @@ function ProjectDetail({ match }) {
 
     const { id } = useParams();
 
-    // const startProject = () => {
-    //     console.log('Starting the project...');
-    //     // logic for starting the project here.
-    // };
-
     useEffect(() => {
         const fetchProject = async () => {
             try {

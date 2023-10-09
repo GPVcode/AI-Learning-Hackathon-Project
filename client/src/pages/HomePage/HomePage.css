@@ -1,81 +1,136 @@
-.home-page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    text-align: center;
+.home-container {
+  position: relative;
+  width: 100%;
+  color: #333; 
+  padding: 4% 10%; 
+  background-color: white; 
+  font-family: 'Arial', sans-serif;
+  line-height: 1.6;
 }
 
-.home-page h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+.overlay {
+  max-width: 1200px;
+  margin: auto;
 }
 
-.home-page p {
-    font-size: 18px;
-    margin-bottom: 20px;
+.home-header {
+  margin-bottom: 60px;
+  text-align: center;
+  padding: 20px 0;
 }
 
-/* Responsive for tablets and desktop */
-@media (min-width: 768px) {
-    .home-page h1 {
-        font-size: 32px;
-    }
+.home-intro {
+  display: flex;
+  align-items: center;
+  gap: 70px;
+  margin-bottom: 70px;
+}
 
-    .home-page p {
-        font-size: 22px;.home-container {
-            font-family: 'Arial', sans-serif;
-            text-align: center;
-            background: linear-gradient(135deg, #83a4d4, #b6fbff);
-            color: #333;
-            padding: 2rem 0;
-          }
-          
-          .home-header {
-            background-color: rgba(255, 255, 255, 0.8);
-            padding: 2rem 0;
-            margin-bottom: 2rem;
-            border-radius: 15px;
-          }
-          
-          .home-intro,
-          .home-features {
-            max-width: 800px;
-            margin: 2rem auto;
-          }
-          
-          .cta-buttons {
-            margin-top: 1.5rem;
-            display: flex;
-          }
-          
-          .cta-button {
-            background-color: #f7a046;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
-            color: white;
-            text-decoration: none;
-            margin: 0 0.5rem;
-            transition: background-color 0.3s;
-          }
-          
-          .cta-button:hover {
-            background-color: #f77f00;
-          }
-          
-          .login-btn {
-            background-color: #58b368;
-          }
-          
-          .login-btn:hover {
-            background-color: #2a9d8f;
-          }
-          
-          .home-footer {
-            margin-top: 3rem;
-            font-size: 1.2rem;
-          }
-          
-    }
+.intro-content {
+  flex: 1;
+}
+
+.intro-image {
+  max-width: 50%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.15);
+}
+
+.cta-buttons {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.cta-button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+  font-size: 1.1rem;
+}
+
+.login-btn {
+  background: #3f51b5;
+  color: white;
+}
+
+.register-btn {
+  background: white;
+  color: #3f51b5;
+  border: 2px solid #3f51b5;
+}
+
+.login-btn:hover {
+  background: #283593;
+}
+
+.register-btn:hover {
+  background: #3f51b5;
+  color: white;
+}
+
+.home-features {
+  display: flex;
+  gap: 70px;
+  justify-content: center;
+  margin-bottom: 60px;
+  padding: 30px 0;
+}
+
+.feature-item {
+  text-align: center;
+  flex: 1;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 20px rgba(0,0,0,0.1);
+  background-color: #f7f7f7;
+}
+
+.home-footer {
+  text-align: center;
+  padding: 30px 0;
+  background-color: #3f51b5;
+  color: white;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+
+  .home-intro {
+      flex-direction: column;  /* Stack elements vertically */
+  }
+
+  .intro-content, .intro-image {
+      max-width: 100%;  /* Allow them to take full width */
+  }
+
+  .cta-buttons {
+      justify-content: center;  /* Center the buttons */
+      flex-direction: column;   /* Stack buttons vertically */
+      gap: 15px;
+  }
+
+  .home-features {
+      flex-direction: column;   /* Stack feature items vertically */
+  }
+
+  .feature-item {
+      margin-bottom: 20px;  /* Add space between stacked feature items */
+  }
+
+  h1, h2 {
+      font-size: 1.5rem;  /* Slightly smaller headings for mobile */
+  }
+
+  p {
+      font-size: 1rem;  /* Adjust font size */
+  }
+
+  .cta-button {
+      padding: 10px 20px;  /* Smaller button padding for mobile */
+      font-size: 1rem;
+  }
 }

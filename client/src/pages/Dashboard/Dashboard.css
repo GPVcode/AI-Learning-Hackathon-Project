@@ -1,0 +1,187 @@
+.dashboard-container {
+    color: #333; /* Setting the main color for the text in the dashboard */
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  h1, h2, h3, p {
+    color: #333; /* Ensuring all levels of headings and paragraphs follow the same color */
+  }
+  
+.cta-banner {
+    position: relative; 
+    overflow: hidden; 
+    max-height: 400px; 
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+    border-radius: 10px;
+
+}
+.cta-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.6); 
+    z-index: 1;
+}
+.cta-text {
+    position: relative; 
+    z-index: 2;
+}
+.dive-in{
+    background-color: #3f51b5;
+}
+
+.cta-banner img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+}
+
+.cta-text {
+    position: absolute; 
+    z-index: 2; 
+    color: #fff;
+    text-align: center;
+    width: fit-content;
+    padding: 20px; 
+    border-radius: 10px; 
+}
+
+.cta-text h2 {
+    color: aliceblue;
+}
+
+
+.cta-text p {
+    color: aliceblue;
+}
+
+
+.section-icon {
+    margin-right: 10px;
+    color: #3f51b5;  /* You can adjust the color as per your preference */
+}
+
+.coming-soon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    background-color: #f4f4f4; 
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.coming-soon-content {
+    text-align: center;
+}
+
+.coming-soon-icon {
+    font-size: 3rem;
+    color: #3f51b5;
+    margin-bottom: 20px;
+}
+
+.coming-soon-content h3 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.coming-soon-content p {
+    font-size: 18px;
+    color: #555;
+}
+
+  .browse-categories {
+    padding: 20px;
+    background-color: #f4f4f4; 
+    margin-top: 40px;
+    border-radius: 10px;
+
+  }
+  
+  .categories-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Space between blocks */
+    justify-content: space-between;
+  }
+  
+  .category-block {
+    flex: 1;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Light border for each block */
+    border-radius: 10px;
+    background-color: #ffffff; /* White background for each block */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s ease;
+  
+    /* For hover effect */
+    cursor: pointer;
+  }
+  
+  .category-block:hover {
+    background-color: #e0e0e0; /* Light gray on hover */
+  }
+  
+  .category-block h3 {
+    margin-top: 10px;
+    color: #333; /* Text color */
+  }
+  
+  .category-block svg {
+    font-size: 2rem; /* Icon size */
+    color: #3f51b5; /* Icon color to match the theme */
+  }
+  
+  @media (max-width: 768px) {
+    .dashboard-container {
+        padding: 15px;
+    }
+
+    .cta-banner img {
+        max-width: 100%;
+    }
+
+    .cta-text {
+        width: 90%; /* Increasing the width for smaller screens */
+        font-size: 0.9em; /* Reducing the font size a bit */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.2em; /* Adjusting heading sizes for tablet view */
+    }
+}
+
+
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    .dashboard-container {
+        padding: 10px;
+    }
+
+    .cta-text {
+        width: 90%;
+        font-size: 0.9em; 
+    }
+
+    h1, h2, h3 {
+        font-size: 1em; /* Adjusting heading sizes for mobile view */
+    }
+
+    .block {
+        height: 150px; /* Reducing block height for mobile */
+    }
+}

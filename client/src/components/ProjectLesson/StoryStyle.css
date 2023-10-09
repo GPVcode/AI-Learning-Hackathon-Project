@@ -1,46 +1,111 @@
 .lesson-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    font-family: 'Roboto', sans-serif;
     padding: 20px;
-    border-radius: 15px;
-    width: 80%;
-    margin: auto;
-    margin-top: 40px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.lesson-container h2 {
-    font-size: 2rem;
+.lesson-title, .step-title {
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
-.lesson-container p {
-    font-size: 1.2rem;
+.lesson-content {
     line-height: 1.5;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.continue-button {
-    margin-top: 20px;
-    padding: 10px;
-    border: none;
+.step-card {
+    padding: 20px;
+    border: 1px solid #e0e0e0;
     border-radius: 5px;
-    background-color: #3498db;
-    color: #fff;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+}
 
-    &:hover {
-        background-color: #2980b9;
-    }
-}
-.lesson-btns {
+.icon-button {
+    background: none;
+    border: none;
     display: flex;
-    width: -webkit-fill-available;
-    place-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    color: #1976D2;
+    margin-right: 10px;
 }
-.continue-button:hover {
-    background-color: #0056b3;
+
+.solution-code {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+    overflow: visible; /* Set overflow to visible to ensure no scrolling */
+    white-space: pre-wrap; /* Breaks lines within words if needed */
+}
+
+
+.hint-text {
+    background-color: #f5f5f5;
+    padding: 10px;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+code {
+    display: block;
+    white-space: pre-wrap; /* Preserves spaces and line breaks */
+    line-height: 1.6; /* Adjust for better readability */
+    font-size: 0.95em;
+    color: #333;
+    background: transparent;
+}
+
+/* Basic syntax highlighting */
+code.keyword { color: #0076d6; } /* e.g. function, if, else */
+code.string { color: #50a14f; } /* e.g. "hello" */
+/* ... Add more based on the type of content you have */
+
+.start-button, .primary-button {
+    background-color: #1976D2;
+    color: white;
+}
+
+.start-button:hover, .primary-button:hover {
+    background-color: #0D47A1;
+}
+
+.secondary-button {
+    background-color: #1976D2;
+}
+
+.secondary-button:hover {
+    background-color: #e0e0e0;
+}
+
+.solution-container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px;
+}
+
+.action-buttons {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin: 20px 0px 10px;
+}
+
+.navigation-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.icon-button.activated {
+    background-color: #e0e0e0; /* Light gray background for the activated state */
+    color: #1976D2; /* Keep the color consistent with the other icon buttons */
+    border-radius: 4px; /* Round the corners slightly */
+    padding: 5px 10px; /* Add some padding to make it look better */
 }

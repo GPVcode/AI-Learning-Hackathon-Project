@@ -30,14 +30,10 @@ export const logout = async (req, res, next) => {
 };
 
 export const getProfile = async (req, res, next) => {
-    console.log("333")
 
     try {
-        console.log("444", req.user)
         const user = await userService.fetchUserProfile(req.user.id);
-        console.log("555")
 
-        console.log("user:", user)
         delete user.password; // omitting sensitive information
         res.json({ success: true, data: user });
     } catch (error) {

@@ -9,6 +9,7 @@ import welcomeStudent from "./student_studying.png";
 import facebookLogo from "./facebook.png";
 import githubLogo from "./github.png";
 import gmailLogo from "./gmail.png";
+
 const AuthForm = ({ mode }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -87,7 +88,7 @@ const AuthForm = ({ mode }) => {
               <button type="submit" disabled={isLoading}>
                 Login
               </button>
-              <p>Or sign in with:</p>
+              {/* <p>Or sign in with:</p>
               <div
                 style={{
                   display: "flex",
@@ -95,7 +96,7 @@ const AuthForm = ({ mode }) => {
                   alignItems: "center",
                 }}
               >
-                <a href="https://www.facebook.com/" target="_blank">
+                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer">
                   <img
                     src={facebookLogo}
                     alt="Facebook logo"
@@ -103,7 +104,7 @@ const AuthForm = ({ mode }) => {
                     height="50"
                   />
                 </a>
-                <a href="https://www.github.com/" target="_blank">
+                <a href="https://www.github.com/" target="_blank" rel="noreferrer">
                   <img
                     src={githubLogo}
                     alt="Github logo"
@@ -111,7 +112,7 @@ const AuthForm = ({ mode }) => {
                     height="50"
                   />
                 </a>
-                <a href="https://www.gmail.com/" target="_blank">
+                <a href="https://www.gmail.com/" target="_blank" rel="noreferrer">
                   <img
                     src={gmailLogo}
                     alt="Gmail logo"
@@ -119,7 +120,7 @@ const AuthForm = ({ mode }) => {
                     height="50"
                   />
                 </a>
-              </div>
+              </div> */}
               <p>
                 Not yet registered?{" "}
                 <a href="" onClick={() => navigate("/register")}>
@@ -144,11 +145,11 @@ const AuthForm = ({ mode }) => {
           {error && <span>{error}</span>}
         </form>
       </div>
-      <img
+      {/* <img
         src={welcomeStudent}
         alt="student studying"
         style={{ width: "20em", height: "30em" }}
-      />
+      /> */}
     </div>
   );
 };

@@ -2,8 +2,10 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { logout } from "../../features/auth/authSlice";
+import { FaUser, FaSignOutAlt, FaSignInAlt } from 'react-icons/fa'; // Importing icons
 import "./Navbar.css";
-import logo from "./logo.png";
+import logo from "../../assets/Quest Teach.svg";
+
 const Navbar = () => {
   const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
@@ -18,26 +20,30 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="nav-logo">
         <Link to="/">
-          {" "}
           <img
-            style={{
-              backgroundImage: `url(${logo})`,
-              backgroundRepeat: "no-repeat",
-              height: "75px",
-              width: "100px",
-            }}
+            src={logo}
+            alt="Logo"
+            style={{ height: "60px", width: "80px" }}
           />
-          SWFT Learnings
-        </Link>{" "}
-        {/* Replace AppName with your actual app name */}
+          
+        </Link>
+        <p>Story Driven Learning.</p>
       </div>
       <div className="nav-items">
-        <Link to="/about">About</Link>
-        {isAuthenticated && <Link to="/profile">Profile</Link>}
+        <Link className="nav-link" to="/about">About</Link>
+        {isAuthenticated && (
+          <Link className="nav-link" to="/profile">
+            <FaUser /> Profile
+          </Link>
+        )}
         {isAuthenticated ? (
-          <button onClick={handleLogout}>Logout</button>
+          <button className="nav-button" onClick={handleLogout}>
+            <FaSignOutAlt /> Logout
+          </button>
         ) : (
-          <Link to="/login">Login</Link>
+          <Link className="nav-link" to="/login">
+            <FaSignInAlt /> Login
+          </Link>
         )}
       </div>
     </nav>
