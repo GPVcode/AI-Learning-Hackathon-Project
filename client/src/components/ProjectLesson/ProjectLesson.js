@@ -47,6 +47,7 @@ function ProjectLesson() {
     const [showSolution, setShowSolution] = useState(false);
     const [showHint, setShowHint] = useState(false);
 
+    // eslint-disable-next-line no-unused-vars
     const { lesson, lessonError } = useLesson(projectId, step?.lesson_id);
 
     useEffect(() => {

@@ -1,5 +1,5 @@
 .footer {
-    background-color: #364494;
+    background-color: #37678C;
     padding: 20px 0;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -46,5 +46,9 @@
 .footer-bottom {
     text-align: center;
     padding: 10px 0;
+    color: white;
+}
+.footer-bottom p{
+    
     color: white;
 }

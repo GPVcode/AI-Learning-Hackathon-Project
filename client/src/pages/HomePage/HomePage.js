@@ -27,25 +27,22 @@ const HomePage = () => {
 
         <section className="home-features">
           <div className="feature-item">
-            <FaBook size={48} color="#3f51b5" />
+            <FaBook size={48} color="#37678C" />
             <h2>Read & Learn</h2>
             <p>Journey through enchanted forests of knowledge.</p>
           </div>
           <div className="feature-item">
-            <FaMountain size={48} color="#3f51b5" />
+            <FaMountain size={48} color="#37678C" />
             <h2>Climb & Master</h2>
             <p>Climb the mountains of skill mastery.</p>
           </div>
           <div className="feature-item">
-            <FaStar size={48} color="#3f51b5" />
+            <FaStar size={48} color="#37678C" />
             <h2>Expert Insights</h2>
             <p>Navigate the rivers of expert insights.</p>
           </div>
         </section>
 
-        <footer className="home-footer">
-          <p>Ready to start your adventure? <Link to="/register">Join us today!</Link></p>
-        </footer>
       </div>
     </div>
   );

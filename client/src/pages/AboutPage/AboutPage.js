@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaBookOpen, FaStar, FaLightbulb, FaUserAstronaut, FaPenNib } from 'react-icons/fa'; // Importing a few icons to enhance the UX
+import { FaBookOpen, FaStar, FaLightbulb, FaUserAstronaut } from 'react-icons/fa'; // Importing a few icons to enhance the UX
 
 import './AboutPage.css'; // This assumes you will style the component using a CSS file
 
@@ -56,10 +56,6 @@ Story Driven Learning takes you on a fantastical journey where lessons are not j
             <h2>Join Us on this Magical Journey</h2>
             <p>Dive deep into the oceans of knowledge, scale the mountains of challenging concepts, and embark on a learning adventure like no other. With Story Driven Learning, every lesson becomes a page-turner.</p>
 
-            {/* <footer>
-                <FaPenNib className="about-icon" />
-                <p>© Story Driven Learning. Crafting unforgettable learning journeys.</p>
-            </footer> */}
         </div>
     );
 };

@@ -6,9 +6,9 @@ const Footer = () => {
     return (
         <footer className="footer">
             <div className="footer-content">
-                <h1>Quest Teach</h1> 
+                <h1>Learning Loom</h1> 
                 <div className='footer-quote'>
-                <p>Empowering the next generation of learners through story-driven experiences.</p>
+                <p>Story Driven Learning.</p>
                 </div>
                 <div className="social-icons">
                     <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
 
             <div className="footer-bottom">
-                <p>© 2023 Quest Teach. All rights reserved.</p>
+                <p>© 2023 Learning Loom. All rights reserved.</p>
             </div>
         </footer>
     );

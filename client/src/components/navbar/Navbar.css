@@ -9,7 +9,7 @@
 }
 
 .nav-logo a {
-  color: #3f51b5;
+  color: #37678C;
   font-size: 24px;
   font-weight: bold;
   text-decoration: none;
@@ -53,7 +53,7 @@
   margin-left: 20px; /* Increase left margin for better spacing */
   padding: 7px 20px; /* slightly larger padding for a more clickable area */
   border: none;
-  background-color: #3f51b5;
+  background-color: #37678C;
   color: #ffffff;
   font-size: 18px;
   border-radius: 8px;
@@ -61,7 +61,7 @@
 }
 
 .nav-button:hover {
-  background-color: #1a237e; /* darker shade on hover */
+  background-color: #254660; /* darker shade on hover */
 }
 
 .nav-logo {

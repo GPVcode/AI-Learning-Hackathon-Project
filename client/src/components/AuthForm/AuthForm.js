@@ -5,10 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { login, register } from "../../features/auth/authSlice";
 import "./AuthForm.css";
-import welcomeStudent from "./student_studying.png";
-import facebookLogo from "./facebook.png";
-import githubLogo from "./github.png";
-import gmailLogo from "./gmail.png";
+import LearningLoom from '../../assets/Quest Teach.svg';
 
 const AuthForm = ({ mode }) => {
   const dispatch = useDispatch();
@@ -58,6 +55,7 @@ const AuthForm = ({ mode }) => {
   return (
     <div className="auth-form-container">
       <div className="auth-form-card">
+      <img src={LearningLoom} alt="Learning Loom Logo" className="learning-loom-logo" />
         <h2>{mode === "login" ? "Login" : "Register"}</h2>
         <form onSubmit={handleFormSubmit}>
           <input

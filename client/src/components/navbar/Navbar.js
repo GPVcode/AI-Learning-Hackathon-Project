@@ -27,7 +27,7 @@ const Navbar = () => {
           />
           
         </Link>
-        <p>Story Driven Learning.</p>
+        <p>Learning Loom</p>
       </div>
       <div className="nav-items">
         <Link className="nav-link" to="/about">About</Link>
