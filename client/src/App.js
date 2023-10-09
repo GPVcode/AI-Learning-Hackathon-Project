@@ -4,6 +4,7 @@ import Registration from "./react-register/register";
 import NotFound from "./NotFound";
 import NavBar from './Navbar';
 import Login from "./react-login/login";
+import Footer from "./Footer";
 import "./App.css";
 import { useEffect, useState } from "react";
 
@@ -55,6 +56,7 @@ function App() {
           <Route path="/register" element={<Registration />} />
           <Route element={<NotFound />} />
         </Routes>
+       <Footer/>
       </BrowserRouter>
     </div>
   );

@@ -56,6 +56,31 @@
 }
 
 
+/* Footer.css */
+
+/* Default styles for desktop */
+.footer {
+  background-color:#2a4d74;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer p {
+  margin: 0;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .footer {
+    padding: 5px;
+    font-size: 14px;
+  }
+}
+
 
 
 .mainContainer {
@@ -120,3 +145,5 @@
     border: 1px solid grey;
     padding-left: 8px;
   }
+
+ 
