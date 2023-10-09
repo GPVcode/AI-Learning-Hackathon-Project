@@ -47,10 +47,10 @@
 }
 
 .navbar-item a:hover {
-  color: #3081c4; /* Change the text color on hover */
+  color: #3081c4; /* Changes the text color on hover */
 }
 
-/* Optional: Add a highlight effect for the active link */
+/* Optional: Adds a highlight effect for the active link */
 .navbar-item.active a {
   font-weight: bold;
 }
