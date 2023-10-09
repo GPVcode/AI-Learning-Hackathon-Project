@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "./Profile.css";
-
+import computer from "../../components/CourseDetail/computer.png";
 function Profile() {
   const [courses, setCourses] = useState([]);
   const user = useSelector((state) => state.auth.user);
@@ -68,6 +68,15 @@ function Profile() {
       <div className="my-courses-section">
         <div className="course-card">
           <div className="course-content" key="">
+            <img
+              alt=""
+              style={{
+                backgroundImage: `url(${computer})`,
+                width: "12em",
+                height: "12em",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
             <h3>Project 1</h3>
             <p>"Recreate the ancient Task Board of Tasktopia."</p>
             <span>Difficulty: easy</span>
@@ -75,6 +84,15 @@ function Profile() {
         </div>
         <div className="course-card">
           <div className="course-content" key="">
+            <img
+              alt=""
+              style={{
+                backgroundImage: `url(${computer})`,
+                width: "12em",
+                height: "12em",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
             <h3>Project 2</h3>
             <p>"Recreate the ancient Task Board of Tasktopia."</p>
             <span>Difficulty: easy</span>
@@ -82,6 +100,15 @@ function Profile() {
         </div>
         <div className="course-card">
           <div className="course-content" key="">
+            <img
+              alt=""
+              style={{
+                backgroundImage: `url(${computer})`,
+                width: "12em",
+                height: "12em",
+                backgroundRepeat: "no-repeat",
+              }}
+            />
             <h3>Project 3</h3>
             <p>"Recreate the ancient Task Board of Tasktopia."</p>
             <span>Difficulty: easy</span>

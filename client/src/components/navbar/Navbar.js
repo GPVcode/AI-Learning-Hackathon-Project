@@ -20,11 +20,13 @@ const Navbar = () => {
         <Link to="/">
           {" "}
           <img
+            alt=""
             style={{
               backgroundImage: `url(${logo})`,
               backgroundRepeat: "no-repeat",
               height: "75px",
               width: "100px",
+              alt: "our logo",
             }}
           />
           SWFT Learnings
