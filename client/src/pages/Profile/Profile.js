@@ -9,6 +9,7 @@ function Profile() {
   const [courses, setCourses] = useState([]);
   const user = useSelector((state) => state.auth.user);
 
+
   useEffect(() => {
     axios
       .get("https://learning-loom.onrender.com/api/users/projects", {
@@ -32,7 +33,7 @@ function Profile() {
         <div className='first' style={{ backgroundImage: `url(${adventureImg})`, backgroundSize: 'cover', backgroundPosition: 'center', padding: '20px 0' }}>
     <div className='middle' style={{ backgroundColor: 'rgba(0, 0, 0, 0.5)', borderRadius: '15px', padding: '15px' }}>
         <div className="profile-container">
-            <h2 style={{ color: 'aliceblue' }}>Welcome back, {user && user.username}!</h2>
+            <h2 style={{ color: 'aliceblue' }}>Hi, welcome back, {user && user.username}!</h2>
             <p style={{ color: 'aliceblue' }}>It's wonderful to see you return to the world of knowledge. The path of learning is an everlasting journey, filled with twists, turns, and surprises. Every time you dive into a new lesson, you're embarking on a new adventure. Let's continue this exciting quest together!</p>
             <p style={{ color: 'aliceblue' }}>Username: {user && user.username}</p>
             <p style={{ color: 'aliceblue' }}>Email: {user && user.email}</p>
