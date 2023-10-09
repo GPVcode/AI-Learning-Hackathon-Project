@@ -11,7 +11,7 @@ function Profile() {
 
   useEffect(() => {
     axios
-      .get("https://learning-loom.onrender.com//api/users/projects", {
+      .get("https://learning-loom.onrender.com/api/users/projects", {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
