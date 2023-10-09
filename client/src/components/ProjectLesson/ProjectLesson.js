@@ -27,7 +27,7 @@ function useLesson(projectId, currentStepLessonId) {
         const fetchLesson = async () => {
             try {
                 const effectiveLessonId = currentStepLessonId || lessonId;
-                const response = await axios.get(`/api/users/projects/${projectId}/lessons/${effectiveLessonId}`);
+                const response = await axios.get(`https://learning-loom.onrender.com/api/users/projects/${projectId}/lessons/${effectiveLessonId}`);
                 setLesson(response.data.data);
             } catch (err) {
                 setError(err);
@@ -54,7 +54,7 @@ function ProjectLesson() {
         if (currentStepIndex === 0) {
             const fetchFirstStep = async () => {
                 try {
-                    const response = await axios.get(`/api/users/projects/${projectId}/lessons/${lesson.id}/steps/1`);
+                    const response = await axios.get(`https://learning-loom.onrender.com/api/users/projects/${projectId}/lessons/${lesson.id}/steps/1`);
                     setStep(response.data.data);
                 } catch (error) {
                     console.error("Error fetching the step:", error);
@@ -72,7 +72,7 @@ function ProjectLesson() {
         setShowHint(false);      // Hide hint
 
         try {
-            const response = await axios.get(`/api/users/projects/${projectId}/lessons/${lesson.id}/steps/${step.id + 1}`);
+            const response = await axios.get(`https://learning-loom.onrender.com/api/users/projects/${projectId}/lessons/${lesson.id}/steps/${step.id + 1}`);
             setStep(response.data.data);
         } catch (error) {
             console.error("Error fetching the next step:", error);

@@ -17,7 +17,7 @@ const Chatbox = ({ stepId }) => {
     const handleSubmit = async () => {
         setIsLoading(true);
         try {
-            const response = await axios.post(`/api/chatbot/response/${stepId}`, { message: userInput });
+            const response = await axios.post(`https://learning-loom.onrender.com/api/chatbot/response/${stepId}`, { message: userInput });
 
             if (response.data.success) {
                 setMessages(prevMessages => [...prevMessages, 

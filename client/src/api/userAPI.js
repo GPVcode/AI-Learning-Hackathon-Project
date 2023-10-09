@@ -1,5 +1,5 @@
 export const registerUser = async (userData) => {
-    const response = await fetch('/api/users/register', {
+    const response = await fetch('https://learning-loom.onrender.com/api/users/register', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -11,7 +11,7 @@ export const registerUser = async (userData) => {
 }
 
 export const loginUser = async (userData) => {
-    const response = await fetch('/api/users/login', {
+    const response = await fetch('https://learning-loom.onrender.com/api/users/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +23,7 @@ export const loginUser = async (userData) => {
 }
 
 export const logoutUser = async () => {
-    const response = await fetch('/api/users/logout', {
+    const response = await fetch('https://learning-loom.onrender.com/api/users/logout', {
         method: 'POST'
     });
 
@@ -32,7 +32,7 @@ export const logoutUser = async () => {
 
 export const verifyToken = async (token) => {
     try {
-        const response = await fetch('/api/users/renewToken', {
+        const response = await fetch('https://learning-loom.onrender.com/api/users/renewToken', {
             headers: {
                 'Authorization': `Bearer ${token}`
             }

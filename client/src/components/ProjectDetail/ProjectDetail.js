@@ -13,7 +13,7 @@ function ProjectDetail({ match }) {
     useEffect(() => {
         const fetchProject = async () => {
             try {
-                const response = await axios.get(`/api/users/projects/${id}`);
+                const response = await axios.get(`https://learning-loom.onrender.com/api/users/projects/${id}`);
                 setProject(response.data.data);
             } catch (error) {
                 console.error("Error fetching the project:", error);
